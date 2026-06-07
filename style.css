@@ -1,0 +1,26 @@
+body{
+margin:0;font-family:Arial,sans-serif;background:#0b1020;color:white;overflow-x:hidden;
+}
+.bg{
+position:fixed;inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.15),transparent 30%),
+radial-gradient(circle at 80% 40%,rgba(128,0,255,.15),transparent 30%);
+animation: float 10s infinite alternate;
+}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-30px)}}
+.container{max-width:900px;margin:auto;padding:30px;position:relative;z-index:1}
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:20px;border-radius:18px;margin-bottom:20px;
+}
+.progress{height:10px;background:#222;border-radius:999px}
+.bar{height:100%;width:100%;background:#6d7cff;border-radius:999px}
+button{
+background:#6d7cff;border:none;color:white;padding:10px 16px;
+border-radius:10px;cursor:pointer;
+}
+select{width:100%;padding:10px;margin-bottom:12px}
+h1{text-align:center}
+.subtitle{text-align:center;color:#aaa}

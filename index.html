@@ -2,45 +2,328 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MCO Build Lab</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
-<div class="bg"></div>
-<div class="container">
-  <h1>MCO Build Lab</h1>
-  <p class="subtitle">AI Discord Server Architect</p>
 
-  <div class="card">
-    <div class="progress"><div class="bar" id="bar"></div></div>
+<!-- Animated Background -->
 
-    <h2>Server Type</h2>
-    <select id="serverType">
-      <option>Gaming</option>
-      <option>Community</option>
-      <option>Roblox</option>
-      <option>Minecraft</option>
-      <option>Creator</option>
-    </select>
+<div id="particles-container"></div>
 
-    <h2>Style</h2>
-    <select id="style">
-      <option>Modern</option>
-      <option>Premium</option>
-      <option>Aesthetic</option>
-      <option>Neon</option>
-    </select>
+<!-- Main App -->
 
-    <button onclick="generate()">Generate Preview</button>
-  </div>
+<div class="app">
 
-  <div class="card">
-    <h2>Output</h2>
-    <pre id="output">{}</pre>
-    <button onclick="downloadJson()">Download JSON</button>
-  </div>
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo-box">
+
+            <div class="logo-icon">
+                🚀
+            </div>
+
+            <div>
+                <h1>MCO Build Lab</h1>
+                <span>Discord AI Architect</span>
+            </div>
+
+        </div>
+
+        <!-- Progress -->
+
+        <div class="progress-wrapper">
+
+            <div class="progress-header">
+                <span>Build Progress</span>
+                <span id="progress-percent">20%</span>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+        </div>
+
+        <!-- Wizard -->
+
+        <div class="wizard">
+
+            <div class="step active">
+                <span>1</span>
+                Server Type
+            </div>
+
+            <div class="step">
+                <span>2</span>
+                Style
+            </div>
+
+            <div class="step">
+                <span>3</span>
+                Features
+            </div>
+
+            <div class="step">
+                <span>4</span>
+                Security
+            </div>
+
+            <div class="step">
+                <span>5</span>
+                Generate
+            </div>
+
+        </div>
+
+        <button class="generate-btn">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            Generate Server
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Top Bar -->
+
+        <div class="topbar">
+
+            <h2>Server Builder</h2>
+
+            <div class="top-actions">
+
+                <button class="ghost-btn">
+                    <i class="fas fa-download"></i>
+                    Export
+                </button>
+
+                <button class="primary-btn">
+                    <i class="fas fa-copy"></i>
+                    Copy JSON
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Dashboard -->
+
+        <div class="dashboard-grid">
+
+            <!-- Configuration -->
+
+            <section class="card config-card">
+
+                <h3>Configuration</h3>
+
+                <div class="field">
+
+                    <label>Server Name</label>
+
+                    <input
+                    type="text"
+                    placeholder="My Awesome Community">
+
+                </div>
+
+                <div class="field">
+
+                    <label>Server Type</label>
+
+                    <select>
+
+                        <option>Gaming</option>
+                        <option>Community</option>
+                        <option>Roblox</option>
+                        <option>Minecraft</option>
+                        <option>Creator</option>
+                        <option>Business</option>
+
+                    </select>
+
+                </div>
+
+                <div class="field">
+
+                    <label>Style</label>
+
+                    <select>
+
+                        <option>Modern</option>
+                        <option>Premium</option>
+                        <option>Aesthetic</option>
+                        <option>Neon</option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+            <!-- Live Preview -->
+
+            <section class="card preview-card">
+
+                <div class="card-header">
+
+                    <h3>
+                        Live Discord Preview
+                    </h3>
+
+                    <span class="status">
+                        LIVE
+                    </span>
+
+                </div>
+
+                <div class="discord-preview">
+
+                    <div class="category">
+
+                        📁 INFORMATION
+
+                        <div class="channel">
+                            # rules
+                        </div>
+
+                        <div class="channel">
+                            # announcements
+                        </div>
+
+                    </div>
+
+                    <div class="category">
+
+                        📁 COMMUNITY
+
+                        <div class="channel">
+                            # general
+                        </div>
+
+                        <div class="channel">
+                            # media
+                        </div>
+
+                        <div class="channel">
+                            # memes
+                        </div>
+
+                    </div>
+
+                    <div class="category">
+
+                        📁 SUPPORT
+
+                        <div class="channel">
+                            # tickets
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- AI Analysis -->
+
+        <section class="card analysis-card">
+
+            <div class="analysis-header">
+
+                <h3>
+                    AI Analysis
+                </h3>
+
+                <span class="ai-badge">
+                    Gemini Ready
+                </span>
+
+            </div>
+
+            <div class="score-grid">
+
+                <div class="score-card">
+
+                    <h4>Security</h4>
+                    <span>92</span>
+
+                </div>
+
+                <div class="score-card">
+
+                    <h4>Growth</h4>
+                    <span>88</span>
+
+                </div>
+
+                <div class="score-card">
+
+                    <h4>Engagement</h4>
+                    <span>91</span>
+
+                </div>
+
+                <div class="score-card">
+
+                    <h4>MCO Score</h4>
+                    <span>95</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Output -->
+
+        <section class="card output-card">
+
+            <div class="card-header">
+
+                <h3>
+                    Generated JSON
+                </h3>
+
+            </div>
+
+<pre id="json-output">
+{
+  "server_info": {},
+  "roles": [],
+  "categories": [],
+  "channels": [],
+  "recommended_bots": []
+}
+</pre>
+
+        </section>
+
+    </main>
+
 </div>
-<script src="script.js"></script>
+
+<script src="wizard.js"></script>
+<script src="preview.js"></script>
+<script src="ai.js"></script>
+<script src="export.js"></script>
+<script src="particles.js"></script>
+
 </body>
 </html>

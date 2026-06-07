@@ -9,7 +9,7 @@ Cloudflare Worker URL
 */
 
 const API_URL =
-"https://YOUR-WORKER.workers.dev";
+"https://mcoaiorg.workers.dev";
 
 /* ==========================
    PROMPT BUILDER
